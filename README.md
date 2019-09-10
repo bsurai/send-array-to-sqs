@@ -1,6 +1,6 @@
 # Prerequisites
 
-Node.js and Docker should be installed.
+Node.js, Docker, Docker Compose should be installed.
 
 # Run tests
 

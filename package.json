@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "test": "jest",
-    "startlocalstack": "docker run -d -p 9324:9324 vsouza/sqs-local",
+    "startlocalstack": "docker-compose -p sqs-local -f docker-compose.yaml up -d",
     "stoplocalstack": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)"
   },
   "dependencies": {
