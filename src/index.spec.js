@@ -1,12 +1,11 @@
 const { SQSqueue } = require('./index')
-const { compress } = require('./compress')
+const jsonpack = require('jsonpack')
 
 const sqsMock = {
   sendMessage() {
     return { promise: async () => {} }    
   }
 }
-
 
 describe('#sendArray', () => {
   
@@ -23,7 +22,7 @@ describe('#sendArray', () => {
     const queue = SQSqueue(sqsMock, url)
     await queue.sendArray(arr)
 
-    const expectedMassageBody = compress(JSON.stringify(arr))
+    const expectedMassageBody = jsonpack.pack(arr)
     expect(sendMessageSpy).toHaveBeenCalledTimes(1)
     expect(sendMessageSpy).toHaveBeenCalledWith({
       MessageBody: expectedMassageBody,

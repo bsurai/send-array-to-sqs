@@ -5,17 +5,20 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "startlocalstack": "docker run -d -p 9324:9324 vsouza/sqs-local",
+    "stoplocalstack": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)"
   },
   "dependencies": {
-    "pako": "1.0.10"
+    "jsonpack": "^1.1.5"
   },
   "devDependencies": {
     "@types/jest": "24.0.18",
     "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "jest": "24.9.0"
+    "jest": "24.9.0",
+    "aws-sdk": "^2.525.0"
   },
   "repository": {
     "type": "git",

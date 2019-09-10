@@ -1,4 +1,19 @@
-Example
+# Prerequisites
+
+Node.js and Docker should be installed.
+
+# Run tests
+
+```
+npm i
+npm run startlocalstack
+npm run test
+npm run stoplocalstack
+```
+
+
+
+# Example of using
 
 ```
 import AWS from 'aws-sdk'
